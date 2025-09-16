@@ -6,15 +6,18 @@ def _format_greyscale_values(greyscales: list[float]) -> str:
     return f"values = S'{', '.join(str(gs) for gs in greyscales)}'"
 
 
-def replace_missing_greyscales_in_compilation(
+def replace_greyscales_in_compilation(
     compilation: Path,
     backup: Path,
     greyscales: list[float],
+    replace_all: bool = False,
 ) -> None:
     temp = compilation.parent / (compilation.name + ".tmp")
 
     new_lines = [
-        line if line.strip() != "values" else _format_greyscale_values(greyscales)
+        line
+        if not (line.strip() == "values" or (replace_all and line.strip().startswith("values = S'")))
+        else _format_greyscale_values(greyscales)
         for line in compilation.read_text().splitlines()
     ]
     temp.write_text("\n".join(new_lines))

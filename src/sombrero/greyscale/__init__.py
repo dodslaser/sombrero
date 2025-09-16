@@ -4,8 +4,8 @@ from ._common import (
     read_greyscale_from_fixture_config,
     read_greyscales_from_compilation,
 )
-from ._repair import (
-    replace_missing_greyscales_in_compilation,
+from ._interpolate import (
+    replace_greyscales_in_compilation,
 )
 from ._visualize import (
     visualize_graphical,
@@ -17,7 +17,7 @@ __all__ = [
     "find_compilation_fixture_paths",
     "read_greyscale_from_fixture_config",
     "average_greyscales",
-    "replace_missing_greyscales_in_compilation",
+    "replace_greyscales_in_compilation",
     "read_greyscales_from_compilation",
     "visualize_graphical",
     "visualize_terminal",

@@ -89,7 +89,7 @@ def visualize_terminal(
     plt.subplot(1, 2).ylim(-255, 255)
     plt.title("Delta to Average")
     if average_greyscale is None or greyscales is None:
-        plt.text(0.5, 0.5, "No average greyscale available")
+        plt.text("No average greyscale available", 0.5, 0.5)
     else:
         for gs in greyscales:
             delta = delta_greyscales(gs, average_greyscale)
@@ -105,7 +105,7 @@ def visualize_terminal(
     plt.subplot(1, 3).ylim(-255, 255)
     plt.title("Delta to Fixture")
     if fixture_greyscale is None:
-        plt.text(0.5, 0.5, "No fixture greyscale available")
+        plt.text("No fixture greyscale available", 0.5, 0.5)
     else:
         if greyscales is not None and average_greyscale is not None:
             for gs in greyscales:
