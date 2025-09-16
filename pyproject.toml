@@ -1,0 +1,30 @@
+[project]
+name = "sombrero"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "dodslaser", email = "2969909+dodslaser@users.noreply.github.com" }
+]
+requires-python = ">=3.11"
+dependencies = [
+    "click>=8.2.1",
+    "matplotlib>=3.10.6",
+    "matplotlib-backend-kitty>=2.1.2",
+    "plotext>=5.3.2",
+    "rich>=14.1.0",
+    "rich-click>=1.8.9",
+]
+
+[project.scripts]
+sombrero = "sombrero:cli.cli"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = [
+    "ruff>=0.13.0",
+    "ty>=0.0.1a20",
+]
